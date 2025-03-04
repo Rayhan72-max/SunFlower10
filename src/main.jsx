@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import Login from './Pages/Login.jsx';
 import Register from './Pages/Register.jsx';
+import AddCampaign from './Pages/AddCampaign.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
   {
     path:"/register",
     element: <Register></Register>
-  }
+  },
+  {
+    path:"/addcampaign",
+    element: <AddCampaign></AddCampaign>
+  },
 ]
   },
 ]);

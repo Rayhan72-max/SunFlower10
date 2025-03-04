@@ -7,7 +7,8 @@ const Navbar = (props) => {
         {name:"Home",path:"/"},
         {name:"All Campaign",path:"/allcampaign"},
         {name:"My Campaign",path:"/allcampaign"},
-        {name:"My Donation",path:"/allcampaign"}
+        {name:"My Donation",path:"/allcampaign"},
+        {name:"Add Campaign",path:"/addcampaign"}
     ]
 
     return (
