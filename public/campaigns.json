@@ -1,0 +1,123 @@
+[
+    {
+      "image": "https://example.com/image1.jpg",
+      "title": "Medical Help for John",
+      "type": "Personal Issue",
+      "description": "John needs urgent heart surgery. Your support can save his life.",
+      "min_donation": 500,
+      "deadline": "2025-02-28",
+      "user_email": "john.doe@example.com",
+      "user_name": "John Doe"
+    },
+    {
+      "image": "https://example.com/image2.jpg",
+      "title": "Launch My Organic Skincare Startup",
+      "type": "Startup",
+      "description": "Funding needed to launch a chemical-free organic skincare line.",
+      "min_donation": 1000,
+      "deadline": "2025-03-15",
+      "user_email": "sophia.green@example.com",
+      "user_name": "Sophia Green"
+    },
+    {
+      "image": "https://example.com/image3.jpg",
+      "title": "Help Build a Village Library",
+      "type": "Creative Ideas",
+      "description": "Raising funds to build a small library in an underprivileged village.",
+      "min_donation": 300,
+      "deadline": "2025-04-05",
+      "user_email": "mike.jones@example.com",
+      "user_name": "Mike Jones"
+    },
+    {
+      "image": "https://example.com/image4.jpg",
+      "title": "Emergency Aid for Flood Victims",
+      "type": "Personal Issue",
+      "description": "Providing food and shelter for families affected by floods.",
+      "min_donation": 500,
+      "deadline": "2025-04-20",
+      "user_email": "lisa.wong@example.com",
+      "user_name": "Lisa Wong"
+    },
+    {
+      "image": "https://example.com/image5.jpg",
+      "title": "New Equipment for Small Farmers",
+      "type": "Business",
+      "description": "Helping small farmers buy modern tools to increase productivity.",
+      "min_donation": 700,
+      "deadline": "2025-03-10",
+      "user_email": "david.smith@example.com",
+      "user_name": "David Smith"
+    },
+    {
+      "image": "https://example.com/image6.jpg",
+      "title": "Support for Street Artists",
+      "type": "Creative Ideas",
+      "description": "Providing materials and gallery space for talented street artists.",
+      "min_donation": 200,
+      "deadline": "2025-03-30",
+      "user_email": "emma.lee@example.com",
+      "user_name": "Emma Lee"
+    },
+    {
+      "image": "https://example.com/image7.jpg",
+      "title": "Eco-Friendly Packaging Business",
+      "type": "Business",
+      "description": "A startup focused on reducing plastic waste through sustainable packaging.",
+      "min_donation": 1200,
+      "deadline": "2025-05-10",
+      "user_email": "jacob.brown@example.com",
+      "user_name": "Jacob Brown"
+    },
+    {
+      "image": "https://example.com/image8.jpg",
+      "title": "Cancer Treatment for Maria",
+      "type": "Personal Issue",
+      "description": "Helping Maria afford her chemotherapy and medical expenses.",
+      "min_donation": 800,
+      "deadline": "2025-06-01",
+      "user_email": "maria.garcia@example.com",
+      "user_name": "Maria Garcia"
+    },
+    {
+      "image": "https://example.com/image9.jpg",
+      "title": "Mobile App for Mental Health",
+      "type": "Startup",
+      "description": "Developing an app to provide free mental health support and guidance.",
+      "min_donation": 1500,
+      "deadline": "2025-06-15",
+      "user_email": "ryan.miller@example.com",
+      "user_name": "Ryan Miller"
+    },
+    {
+      "image": "https://example.com/image10.jpg",
+      "title": "Support Young Entrepreneurs",
+      "type": "Business",
+      "description": "Creating a mentorship and funding program for young business owners.",
+      "min_donation": 1000,
+      "deadline": "2025-07-01",
+      "user_email": "olivia.taylor@example.com",
+      "user_name": "Olivia Taylor"
+    },
+    {
+      "image": "https://example.com/image11.jpg",
+      "title": "Documentary on Climate Change",
+      "type": "Creative Ideas",
+      "description": "Raising funds for a documentary highlighting the effects of global warming.",
+      "min_donation": 500,
+      "deadline": "2025-07-10",
+      "user_email": "ethan.white@example.com",
+      "user_name": "Ethan White"
+    },
+    {
+      "image": "https://example.com/image12.jpg",
+      "title": "Women Empowerment Training",
+      "type": "Personal Issue",
+      "description": "Providing free skill development training for underprivileged women.",
+      "min_donation": 600,
+      "deadline": "2025-07-20",
+      "user_email": "sarah.adams@example.com",
+      "user_name": "Sarah Adams"
+    }
+  ]
+  
