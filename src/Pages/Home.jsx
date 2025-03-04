@@ -18,6 +18,7 @@ const Home = (props) => {
         fetch("http://localhost:5000/campaign").then(res => res.json())
         .then(data => setCampaigns(data))
     }, [])
+    console.log(campaigns)
     const today = new Date();
     const runnigCampaigns = campaigns.filter(campaign => {
         const deadline = new Date(campaign.deadline)

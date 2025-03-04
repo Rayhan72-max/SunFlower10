@@ -5,6 +5,7 @@ import './App.css'
 import Navbar from './Shared/Navbar'
 import Footer from './Shared/Footer'
 import Home from './Pages/Home'
+import { Outlet } from 'react-router-dom'
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <Home></Home>
+      <Outlet></Outlet>
       <Footer></Footer>
     </>
   )

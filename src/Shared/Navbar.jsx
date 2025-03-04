@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
 
@@ -20,7 +21,7 @@ const Navbar = (props) => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            {routes.map(r=><li><a>${r.name}</a></li>)}
+                            {routes.map(r=><Link to={r.path}>{r.name}</Link>)}
                             
                             
                         </ul>
@@ -29,11 +30,11 @@ const Navbar = (props) => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                    {routes.map(r=><li><a>{r.name}</a></li>)}
+                    {routes.map(r=><Link to={r.path}><li><button className='font-bold'>{r.name}</button></li></Link>)}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Login</a>
+                    <Link to={"/login"}><button className="btn">Login</button></Link>
                 </div>
             </div>
         </div>
