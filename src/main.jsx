@@ -9,6 +9,9 @@ import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import Login from './Pages/Login.jsx';
 import Register from './Pages/Register.jsx';
 import AddCampaign from './Pages/AddCampaign.jsx';
+import Details from './Pages/Details.jsx';
+import AllCampaigns from './Pages/AllCampaigns.jsx';
+import MyCampaign from './Pages/MyCampaign.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,18 @@ const router = createBrowserRouter([
   {
     path:"/addcampaign",
     element: <AddCampaign></AddCampaign>
+  },
+  {
+    path:"/details/:id",
+    element: <Details></Details>
+  },
+  {
+    path:"/allcampaigns",
+    element: <AllCampaigns></AllCampaigns>
+  },
+  {
+    path:"/mycampaign/:email",
+    element: <MyCampaign></MyCampaign>
   },
 ]
   },

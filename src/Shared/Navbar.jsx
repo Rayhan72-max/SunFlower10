@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Navbar = (props) => {
-
+    const {user} = useContext(AuthContext);
+    const email = user.email;
     const routes = [
         {name:"Home",path:"/"},
         {name:"All Campaign",path:"/allcampaign"},
-        {name:"My Campaign",path:"/allcampaign"},
+        {name:"My Campaign",path:`/mycampaign/${email}`},
         {name:"My Donation",path:"/allcampaign"},
-        {name:"Add Campaign",path:"/addcampaign"}
+        {name:"Add Campaign",path:"/addcampaign"},
+        {name:"All Campaigns",path:"/allcampaigns"}
     ]
 
     return (

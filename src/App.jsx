@@ -15,7 +15,9 @@ function App() {
     <>
       <Navbar></Navbar>
       <Outlet></Outlet>
+      <footer className='relative -bottom-16'>
       <Footer></Footer>
+      </footer>
     </>
   )
 }

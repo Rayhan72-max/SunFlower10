@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import logo from "../assets/SunFlower.jpg"
 import Banner from '../Component/Banner';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import img1 from "../assets/Cow.jpg"
+import { AuthContext } from '../AuthProvider/AuthProvider';
 /* import img2 from ""
 import img3 from ""
 import img4 from "" */
 
 const Home = (props) => {
-    const [campaigns, setCampaigns] = useState([])
+    const {campaigns} = useContext(AuthContext);
     const [isWide,setIsWide] = useState(false);
     const handleWide = () =>{
         if(isWide===false){setIsWide(true);}
     }
-    useEffect(() => {
-        fetch("http://localhost:5000/campaign").then(res => res.json())
-        .then(data => setCampaigns(data))
-    }, [])
+    
     console.log(campaigns)
     const today = new Date();
     const runnigCampaigns = campaigns.filter(campaign => {
@@ -56,7 +54,7 @@ const Home = (props) => {
                         <h2 className="card-title">{campaign.title}</h2>
                         <p>{campaign.description}</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">See More</button>
+                            <Link to={`/details/${campaign._id}`}><button className="btn btn-primary">See More</button></Link>
                         </div>
                     </div>
                 </div>)}
