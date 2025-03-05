@@ -12,6 +12,7 @@ import AddCampaign from './Pages/AddCampaign.jsx';
 import Details from './Pages/Details.jsx';
 import AllCampaigns from './Pages/AllCampaigns.jsx';
 import MyCampaign from './Pages/MyCampaign.jsx';
+import Update from './Pages/Update.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path:"/mycampaign/:email",
     element: <MyCampaign></MyCampaign>
+  },
+  {
+    path:"/update",
+    element: <Update></Update>
   },
 ]
   },
