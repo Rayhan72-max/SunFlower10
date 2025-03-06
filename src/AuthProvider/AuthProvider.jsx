@@ -8,13 +8,17 @@ export const AuthContext = createContext();
   
 
 const AuthProvider = ({children}) => {
+    const [theme,setTheme] = useState(false)
+    const [loading,setLoading] = useState(true)
     const [user,setUser] = useState({});   
     const [campaigns, setCampaigns] = useState([])
 
 
 useEffect(() => {
         fetch("http://localhost:5000/campaign").then(res => res.json())
-        .then(data => setCampaigns(data))
+        .then(data => {
+          setLoading(false)
+          setCampaigns(data)})
     }, [])    
 const signUp =(email,password)=> createUserWithEmailAndPassword(auth, email, password);
 
@@ -68,7 +72,11 @@ const forgetPass = (email) =>{
         forgetPass,
         user,
         logOut,
-        campaigns
+        campaigns,
+        loading,
+        setLoading,
+        theme,
+        setTheme
     }
 
     

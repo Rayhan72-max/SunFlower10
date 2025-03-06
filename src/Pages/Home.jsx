@@ -10,7 +10,7 @@ import img3 from ""
 import img4 from "" */
 
 const Home = (props) => {
-    const {campaigns} = useContext(AuthContext);
+    const {campaigns,theme,setTheme} = useContext(AuthContext);
     const [isWide,setIsWide] = useState(false);
     const handleWide = () =>{
         if(isWide===false){setIsWide(true);}
@@ -25,7 +25,7 @@ const Home = (props) => {
     console.log(runnigCampaigns.length)
     console.log(campaigns.length)
     return (
-        <div>
+        <div data-theme={theme?"light":"dark"}>
             <Banner></Banner>
             <section className='grid mt-2 justify-center p-8 lg:grid-cols-3 gap-2'>
                 <div>

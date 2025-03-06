@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 const MyCampaign = (props) => {
 
     const [campaign, setCampaign] = useState([]);
-    const { user } = useContext(AuthContext);
+    const { user,loading } = useContext(AuthContext);
     const email = user.email;
     console.log("email from mycampaign", user)
     useEffect(() => {
@@ -38,6 +38,9 @@ const MyCampaign = (props) => {
     return (
 
         <div>
+            {loading?     
+            <span className="loading loading-dots loading-xl"></span>:
+            <div>
             <h1 className='text-xl text-center bg-linear-to-r from-cyan-500 to-blue-500 font-bold text-transparent bg-clip-text p-2'>My Campaigns</h1>
             <div className="overflow-x-auto">
                 <table className="table">
@@ -97,6 +100,7 @@ const MyCampaign = (props) => {
                     </tbody>
                 </table>
             </div>
+        </div>}
         </div>
 
     );

@@ -1,5 +1,7 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui"{
+    themes: dark --default, dark --prefersdark, cupcake;
+  }
 .sigmar-regular {
     font-family: "Sigmar", sans-serif;
     font-weight: 400;

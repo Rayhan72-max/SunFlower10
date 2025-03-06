@@ -1,18 +1,29 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { Tooltip } from 'react-tooltip'
 
 const Navbar = (props) => {
-    const {user} = useContext(AuthContext);
+    const { user, logOut, setTheme, theme } = useContext(AuthContext);
     const email = user.email;
     const routes = [
-        {name:"Home",path:"/"},
-        {name:"All Campaign",path:"/allcampaign"},
-        {name:"My Campaign",path:`/mycampaign/${email}`},
-        {name:"My Donation",path:"/allcampaign"},
-        {name:"Add Campaign",path:"/addcampaign"},
-        {name:"All Campaigns",path:"/allcampaigns"}
+        { name: "Home", path: "/" },
+
+        { name: "My Campaign", path: `/mycampaign/${email}` },
+        { name: "My Donation", path: `/mydonation/${email}` },
+        { name: "Add Campaign", path: "/addcampaign" },
+        { name: "All Campaigns", path: "/allcampaigns" }
     ]
+    const handleLogOut = () => {
+        logOut()
+    }
+    const handleTheme = () => {
+        if (theme === true) {
+            setTheme(false)
+        } else {
+            setTheme(true)
+        }
+    }
 
     return (
         <div>
@@ -25,20 +36,27 @@ const Navbar = (props) => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            {routes.map(r=><Link to={r.path}>{r.name}</Link>)}
-                            
-                            
+                            {routes.map(r => <Link to={r.path}>{r.name}</Link>)}
+
+
                         </ul>
                     </div>
                     <a className="btn btn-ghost text-xl">SunFlower</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                    {routes.map(r=><Link to={r.path}><li><button className='font-bold'>{r.name}</button></li></Link>)}
+                        {routes.map(r => <Link to={r.path}><li><button className='font-bold'>{r.name}</button></li></Link>)}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to={"/login"}><button className="btn">Login</button></Link>
+                    {user === "" ? <Link to={"/login"}><button className="btn font-semibold">Log In</button></Link> : <div className='flex flex-row items-center gap-2 '> <img className='rounded' src={user.photoURL}></img> <button className="btn font-semibold" onClick={handleLogOut}>LogOut</button></div>}
+                    <input data-tooltip-id="my-tooltip-inline"
+                        data-tooltip-content="Change Theme" onClick={handleTheme} type="checkbox" defaultChecked className="ml-2 toggle border-indigo-600 bg-white checked:bg-black checked:text-white checked:border-orange-500 " />
+                    <Tooltip
+                        id="my-tooltip-inline"
+                        style={{ backgroundColor: "rgb(0, 255, 30)", color: "#222" }}
+                    />
+
                 </div>
             </div>
         </div>

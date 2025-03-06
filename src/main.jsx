@@ -13,6 +13,9 @@ import Details from './Pages/Details.jsx';
 import AllCampaigns from './Pages/AllCampaigns.jsx';
 import MyCampaign from './Pages/MyCampaign.jsx';
 import Update from './Pages/Update.jsx';
+import MyDonation from './Pages/MyDonation.jsx';
+import Unable from './Pages/Unable.jsx';
+import Private from './Pages/Private.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,14 +48,22 @@ const router = createBrowserRouter([
   },
   {
     path:"/mycampaign/:email",
-    element: <MyCampaign></MyCampaign>
+    element: <Private><MyCampaign></MyCampaign></Private>
   },
   {
     path:"/update",
-    element: <Update></Update>
+    element: <Private><Update></Update></Private>
   },
-]
+  {
+    path:"/mydonation/:email",
+    element: <Private><MyDonation></MyDonation></Private>
   },
+],
+},
+{
+  path:"*",
+  element:<Unable></Unable>
+}
 ]);
 
 
