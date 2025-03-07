@@ -3,7 +3,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2'
 const Update = (props) => {
     const {user} = useContext(AuthContext)
-    console.log(user.email)
+    
     const handleCampaign= (e)=>{
             e.preventDefault();
             
@@ -17,8 +17,8 @@ const Update = (props) => {
             const amount = form.amount.value;
             const deadline = form.deadline.value;
             const campaign = {name,email,thumbnail,title,type,description,amount,deadline}; 
-            console.log(name,amount)
-            fetch(`http://localhost:5000/update/${email}`,{
+            
+            fetch(`https://sunflower-server-hazel.vercel.app/update/${email}`,{
                 method:'PUT',
                 headers:{
                     'content-type':'application/json'
@@ -34,7 +34,7 @@ const Update = (props) => {
                       });
                 }
                 
-                console.log(data)})
+                })
             document.getElementById("form").reset();
         }
         

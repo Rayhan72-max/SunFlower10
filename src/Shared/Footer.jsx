@@ -1,6 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = (props) => {
+    const handleRunning=()=>{
+        const element = document.getElementById("running");
+        element.scrollIntoView()
+    }
+    const handleHome=()=>{
+        const element = document.getElementById("home");
+        element.scrollIntoView()
+    }
     return (
         <div>
             <div className='mt-4 pt-4 border-t-2 border-black bg-black'>
@@ -20,9 +29,9 @@ const Footer = (props) => {
                     <div>
                         <h1 className="mb-2 font-bold flex gap-2 items-center text-xl">Quick Links</h1>
                         <div className="text-gray-400 text-left">
-                            <p>Home</p>
-                            <p>About</p>
-                            <p>Contact</p>
+                            <button onClick={handleHome}><h1>Home</h1></button>
+                            <Link to={"/about"}><h1>About</h1></Link>
+                            <button  onClick={handleRunning}><h1>Running Campaign</h1></button>
                         </div>
                     </div>
                     <div>

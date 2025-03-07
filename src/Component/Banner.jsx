@@ -52,7 +52,7 @@ const Banner = (props) => {
     function scaleStyle(idx) {
         if (!details) return {}
         const slide = details.slides[idx]
-        const scale_size = 0.7
+        const scale_size = 0.5
         const scale = 1 - (scale_size - scale_size * 0.1)
         return {
           transform: `scale(${scale})`,
@@ -77,68 +77,69 @@ const Banner = (props) => {
                     </span>
                 </h1>
                 
+                <div className='w-3/4 rounded-lg mx-auto'>
                 <div ref={sliderRef} className="h-screen keen-slider zoom-out">
                     
-                        <div style={scaleStyle(1)} className="keen-slider__slide zoom-out__slide">
-                            
-                                <figure className='flex justify-center'>
-                                    <img src={image1} className='justify-center h-screen'/>
-                                </figure>
-                                    
+                    <div style={scaleStyle(1)} className="keen-slider__slide zoom-out__slide">
+                        
+                            <figure className='flex justify-center'>
+                                <img src={image1} className='justify-center h-screen'/>
+                            </figure>
                                 
                             
-                            <div className='absolute bottom-10 flex justify-center w-full'>
-                                <div className='w-fit'>
-                                    <h1 className='text-2xl bg-[rgba(0,0,255,0.3)] text-white permanent-marker-regular '>One House One Firm</h1>
-                                </div>
+                        
+                        <div className='absolute bottom-10 flex justify-center w-full'>
+                            <div className='w-fit'>
+                                <h1 className='text-2xl bg-[rgba(0,0,255,0.3)] text-white permanent-marker-regular '>One House One Firm</h1>
                             </div>
-                            
                         </div>
-                        <div style={scaleStyle(1)} className="keen-slider__slide zoom-out__slide">
-                            
-                                <figure className='flex justify-center'>
-                                    <img src={image2} className='justify-center h-screen'/>
-                                </figure>
-                                    
+                        
+                    </div>
+                    <div style={scaleStyle(1)} className="keen-slider__slide zoom-out__slide">
+                        
+                            <figure className='flex justify-center'>
+                                <img src={image2} className='justify-center h-screen'/>
+                            </figure>
                                 
                             
-                            <div className='absolute bottom-10 flex justify-center w-full'>
-                                <div className='w-fit'>
-                                    <h1 className='text-2xl text-white bg-[rgba(0,0,255,0.3)] permanent-marker-regular '>Anti-Drug Awarness Film</h1>
-                                </div>
+                        
+                        <div className='absolute bottom-10 flex justify-center w-full'>
+                            <div className='w-fit'>
+                                <h1 className='text-2xl text-white bg-[rgba(0,0,255,0.3)] permanent-marker-regular '>Anti-Drug Awarness Film</h1>
                             </div>
-                            
                         </div>
-                        <div style={scaleStyle(1)} className="keen-slider__slide zoom-out__slide">
-                            
-                                <figure className='flex justify-center'>
-                                    <img src={image3} className='justify-center h-screen'/>
-                                </figure>
-                                    
+                        
+                    </div>
+                    <div style={scaleStyle(1)} className="keen-slider__slide zoom-out__slide">
+                        
+                            <figure className='flex justify-center'>
+                                <img src={image3} className='justify-center h-screen'/>
+                            </figure>
                                 
                             
-                            <div className='absolute bottom-10 flex justify-center w-full'>
-                                <div className='w-fit'>
-                                    <h1 className='text-2xl text-white bg-[rgba(0,0,255,0.3)] permanent-marker-regular '>Fisheries Project</h1>
-                                </div>
+                        
+                        <div className='absolute bottom-10 flex justify-center w-full'>
+                            <div className='w-fit'>
+                                <h1 className='text-2xl text-white bg-[rgba(0,0,255,0.3)] permanent-marker-regular '>Fisheries Project</h1>
                             </div>
-                            
                         </div>
-                        <div style={scaleStyle(1)} className="keen-slider__slide zoom-out__slide">
-                            
-                                <figure className='flex justify-center'>
-                                    <img src={image4} className='justify-center h-screen'/>
-                                </figure>
-                                    
+                        
+                    </div>
+                    <div style={scaleStyle(1)} className="keen-slider__slide zoom-out__slide">
+                        
+                            <figure className='flex justify-center'>
+                                <img src={image4} className='justify-center h-screen'/>
+                            </figure>
                                 
                             
-                            <div className='absolute bottom-10 flex justify-center w-full'>
-                                <div className='w-fit'>
-                                    <h1 className='text-2xl text-white bg-[rgba(0,0,255,0.3)] permanent-marker-regular '>Developing New Technologies</h1>
-                                </div>
+                        
+                        <div className='absolute bottom-10 flex justify-center w-full'>
+                            <div className='w-fit'>
+                                <h1 className='text-2xl text-white bg-[rgba(0,0,255,0.3)] permanent-marker-regular '>Developing New Technologies</h1>
                             </div>
                         </div>
-                   
+                    </div>
+            </div>
                 </div>
             </div>
         

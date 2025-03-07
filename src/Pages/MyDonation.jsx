@@ -7,13 +7,13 @@ const MyDonation = (props) => {
     const [campaigns,setCampaign] = useState([]) 
     const {user,loading,setLoading} = useContext(AuthContext);
     const email = user.email;
-    console.log(email)
+    
     useEffect(()=>{
         
-        fetch(`http://localhost:5000/mydonation/${email}`)
+        fetch(`https://sunflower-server-hazel.vercel.app/mydonation/${email}`)
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
+            
             setLoading(false)
             setCampaign(data)
             })

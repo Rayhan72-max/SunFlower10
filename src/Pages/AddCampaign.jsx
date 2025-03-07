@@ -18,8 +18,8 @@ const AddCampaign = (props) => {
         const amount = form.amount.value;
         const deadline = form.deadline.value;
         const campaign = {name,email,thumbnail,title,type,description,amount,deadline}; 
-        console.log(name,amount)
-        fetch("http://localhost:5000/campaign",{
+        
+        fetch("https://sunflower-server-hazel.vercel.app/campaign",{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -35,7 +35,7 @@ const AddCampaign = (props) => {
                   });
             }
             
-            console.log(data)})
+            })
         document.getElementById("form").reset();
     }
     

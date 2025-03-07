@@ -9,9 +9,9 @@ const MyCampaign = (props) => {
     const [campaign, setCampaign] = useState([]);
     const { user,loading } = useContext(AuthContext);
     const email = user.email;
-    console.log("email from mycampaign", user)
+    
     useEffect(() => {
-        fetch(`http://localhost:5000/mycampaign/${user.email}`)
+        fetch(`https://sunflower-server-hazel.vercel.app/mycampaign/${user.email}`)
             .then(res => res.json())
             .then(data => setCampaign(data))
     }, [])
@@ -29,11 +29,11 @@ const MyCampaign = (props) => {
           }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/delete/${id}`,
+                fetch(`https://sunflower-server-hazel.vercel.app/delete/${id}`,
                     { method: "DELETE" })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
+                        
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted",

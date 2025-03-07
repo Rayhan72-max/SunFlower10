@@ -15,7 +15,7 @@ const AuthProvider = ({children}) => {
 
 
 useEffect(() => {
-        fetch("http://localhost:5000/campaign").then(res => res.json())
+        fetch("https://sunflower-server-hazel.vercel.app/campaign").then(res => res.json())
         .then(data => {
           setLoading(false)
           setCampaigns(data)})
@@ -55,10 +55,6 @@ useEffect(()=>{
 
 const forgetPass = (email) =>{
   sendPasswordResetEmail(auth,email)
-  .then()
-  .catch((error)=>{
-    console.log(error.message)
-  })
 }
 
 

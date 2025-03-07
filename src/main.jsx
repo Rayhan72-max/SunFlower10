@@ -16,6 +16,7 @@ import Update from './Pages/Update.jsx';
 import MyDonation from './Pages/MyDonation.jsx';
 import Unable from './Pages/Unable.jsx';
 import Private from './Pages/Private.jsx';
+import About from './Component/About.jsx';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
   {
     path:"/mydonation/:email",
     element: <Private><MyDonation></MyDonation></Private>
+  },
+  {
+    path:"/about",
+    element: <About></About>
   },
 ],
 },

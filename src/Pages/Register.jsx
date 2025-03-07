@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { updateProfile } from 'firebase/auth';
 import { FaEye,FaEyeSlash} from "react-icons/fa";
 import Swal from 'sweetalert2';
 
+
+
 const Register = (props) => {
+    const navigate = useNavigate();
     const {auth} = useContext(AuthContext);
     const {signUp} = useContext(AuthContext)
     const [isLess,setIsLess]=useState(false);
@@ -59,10 +62,9 @@ const Register = (props) => {
               // Signed up 
               
               updateProfile(auth.currentUser,{
-                displayName:name,photoURL:photoUrl,phoneNumber:phone
+                displayName:name,photoURL:photoUrl
               })
-              .then()
-              
+              navigate("/home")
               // ...
             })
             .catch((error) => {

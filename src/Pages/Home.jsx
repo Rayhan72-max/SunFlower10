@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import logo from "../assets/SunFlower.jpg"
 import Banner from '../Component/Banner';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import img1 from "../assets/Cow.jpg"
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import About from '../Component/About';
 /* import img2 from ""
 import img3 from ""
 import img4 from "" */
@@ -22,36 +22,24 @@ const Home = (props) => {
         const deadline = new Date(campaign.deadline)
         return deadline > today;
     })
-    console.log(runnigCampaigns.length)
-    console.log(campaigns.length)
+    
     return (
         
         <div>
             {
-                loading?<span className="loading loading-dots loading-xl"></span>: <div data-theme={theme?"light":"dark"}>
+                loading?<span className="loading loading-dots loading-xl"></span>: <div id='home' data-theme={theme?"light":"dark"}>
                 <Banner></Banner>
-                <section className='grid mt-2 justify-center p-8 lg:grid-cols-3 gap-2'>
-                    <div>
-                        <img src={logo} alt="" />
-                    </div>
-                    <div className='col-span-2'>
-                        <h1 className='text-6xl font-bold '>CrowdCube</h1>
-                        <hr />
-                        <p className='mt-4'>
-                            CrowdCube is a crowdsourcing organization dedicated to bringing people together to support meaningful causes. Like a CrowdCube turning towards the sun, we strive to spread hope, positivity, and growth by connecting donors with impactful projects. Through collective efforts, we empower communities, fund innovative ideas, and create lasting change. 🌻✨
-                        </p>
-                    </div>
-                </section>
-                <section className='p-2'>
+                <About></About>
+                <section id='running' className='p-2'>
                     <h1 className='text-4xl mb-9 text-left underline font-bold'>Runnig Campaigns:</h1>
     
-                    <div className='flex flex-col lg:grid grid-cols-3 gap-2'>
+                    <div className='flex flex-col lg:grid grid-cols-3 gap-4'>
                     {runnigCampaigns.map(campaign => 
-                    <div className="card bg-base-100 w-full h-full shadow-sm">
+                    <div className="card bg-base-100 shadow-sm">
                         <figure>
                             <img
                                 src={campaign.image}
-                                 />
+                                className='h-50 w-full' />
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title">{campaign.title}</h2>
@@ -89,14 +77,9 @@ const Home = (props) => {
                 <section>
                     <h1 className="text-5xl font-bold bg-gradient-to-br from-blue-600 to-cyan-500 text-transparent bg-clip-text text-center p-2">Gellary</h1>
                 <div className='flex flex-col  lg:grid grid-cols-3 gap-4'>
-                        <img src={img1}/>
-                        <img src={img1}/>
-                        <img src={img1}/>
-                        <img src={img1}/>
-                        <img src={img1}/>
-                        <img src={img1}/>
-                        <img src={img1}/>
-                        <img src={img1}/>
+                        {campaigns.map(campaign=>
+                            <img src={campaign.image} className='h-full w-full'/>    
+                         )}                   
                 </div>
                 </section>
             </div>

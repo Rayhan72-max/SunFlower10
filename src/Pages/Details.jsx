@@ -10,13 +10,13 @@ const Details = (props) => {
 
     const [campaign, setCampaign] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/details/${id.id}`)
+        fetch(`https://sunflower-server-hazel.vercel.app/details/${id.id}`)
             .then(res => res.json())
             .then(data => setCampaign(data))
     }, [])
     campaign.username = user.displayName;;
     campaign.email = user.email;
-    console.log(campaign);
+    
     const today = new Date();
     const deadline = new Date(campaign.deadline)
     const handleDonate = (e) => {
@@ -27,7 +27,7 @@ const Details = (props) => {
                 icon: "error"
             });
         }else{
-            fetch("http://localhost:5000/donation", {
+            fetch("https://sunflower-server-hazel.vercel.app/donation", {
                 method: "POST",
                 headers: {
                     "content-type": 'application/json'
