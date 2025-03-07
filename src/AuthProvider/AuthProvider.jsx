@@ -76,7 +76,8 @@ const forgetPass = (email) =>{
         loading,
         setLoading,
         theme,
-        setTheme
+        setTheme,
+        setCampaigns
     }
 
     

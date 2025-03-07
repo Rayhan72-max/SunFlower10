@@ -19,7 +19,7 @@ const MyDonation = (props) => {
             })
     },[])
     return (
-        <div className='grid grid-cols-3 gap-2'>
+        <div className='flex flex-col lg:grid grid-cols-3 gap-2'>
             
             {loading?
                 <span className="loading loading-dots loading-xl"></span>:

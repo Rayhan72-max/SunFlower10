@@ -3,6 +3,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithPopup } from 'firebase/auth';
 import { GithubAuthProvider } from "firebase/auth";
+import Swal from 'sweetalert2';
 
 const Login = (props) => {
     const navigate = useNavigate();
@@ -16,6 +17,11 @@ const Login = (props) => {
         const user = {password,email}
         signIn(email,password)
         .then(()=>navigate("/"))
+        .catch(err=>   
+            Swal.fire({title: "Invalid Credential!",
+                        icon: "error",
+                        text:"invalid password or email"
+                        }))
         
     }
 
@@ -27,6 +33,7 @@ const Login = (props) => {
     
     const handleGoogle=()=>{
         signInWithPopup(auth,provider)
+        .then(()=>navigate("/home"))
     }
     const handleGithub=()=>{
         signInWithPopup(auth,gitprovider)

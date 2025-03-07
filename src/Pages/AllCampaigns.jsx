@@ -1,15 +1,30 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Link } from 'react-router-dom';
-
+import { FaArrowDownShortWide } from "react-icons/fa6";
+import { Tooltip } from 'react-tooltip'
 const AllCampaigns = (props) => {
-  const { campaigns, loading } = useContext(AuthContext);
-  console.log("camppppppppppp", campaigns)
+  const { campaigns, loading,setCampaigns } = useContext(AuthContext);
+  
+  
+    const handleSort = () => {
+    setCampaigns([])
+    const shortedItems = campaigns.sort((a, b) => a.min_donation - b.min_donation);
+    
+    setCampaigns(shortedItems)
 
+  }
+ 
+  
 
   return (
     <div>
       <h1 className='text-xl text-center bg-linear-to-r from-cyan-500 to-blue-500 font-bold text-transparent bg-clip-text p-2'>All Campaigns</h1>
+      <div className='flex justify-end mr-2 text-xl'><button onClick={handleSort} data-tooltip-id="my-tooltip-inline" data-tooltip-content="Short By Price"><FaArrowDownShortWide /></button></div>
+      <Tooltip
+        id="my-tooltip-inline"
+        style={{ backgroundColor: "rgb(0, 255, 30)", color: "#222" }}
+      />
       {
         loading ? <span className="loading loading-dots loading-xl"></span> :
           <div className="overflow-x-auto">

@@ -25,7 +25,10 @@ const Details = (props) => {
             },
             body:JSON.stringify(campaign)
         })
-    }
+        Swal.fire({
+            title: "Campaign Updated!",
+            icon: "success"});
+        }
 
     return (
         <div>

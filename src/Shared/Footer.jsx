@@ -4,7 +4,7 @@ const Footer = (props) => {
     return (
         <div>
             <div className='mt-4 pt-4 border-t-2 border-black bg-black'>
-                <h1 className="font-bold text-4xl text-center text-blue-500 ">SunFlower</h1>
+                <h1 className="font-bold text-4xl text-center text-blue-500 ">CrowdCube</h1>
                 <p className="text-gray-400 text-center">Donate to spread happiness</p>
                 <footer className="text-white flex flex-col  justify-between p-8 lg:grid grid-cols-3 gap-2 ">
                     <div>

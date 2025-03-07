@@ -3,6 +3,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Link } from 'react-router-dom';
 import { updateProfile } from 'firebase/auth';
 import { FaEye,FaEyeSlash} from "react-icons/fa";
+import Swal from 'sweetalert2';
 
 const Register = (props) => {
     const {auth} = useContext(AuthContext);
@@ -20,12 +21,30 @@ const Register = (props) => {
     const handleSignUp=(e)=>{
         e.preventDefault()
         
-         const name= e.target.name.value;
-         const address= e.target.address.value;
-         const phone= e.target.phone.value;
+         const name= e.target.name.value;       
          const password= e.target.password.value;
          const email= e.target.email.value;
          const photoUrl = e.target.photo.value;
+         if(name ===""){
+            Swal.fire({title: "Please give Name!",
+                icon: "error",
+                })
+         }
+         if(password ===""){
+            Swal.fire({title: "Please give password",
+                icon: "error",
+                })
+         }
+         if(email ===""){
+            Swal.fire({title: "Please give Email",
+                icon: "error", 
+            })
+         }
+         if(photoUrl ===""){
+            Swal.fire({title: "Please give photoURL",
+                icon: "error",
+                })
+         }
          
          if(password.length<6){
                 return setIsLess(true)
@@ -74,37 +93,27 @@ const Register = (props) => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="name" name="name" placeholder="Name" className="input input-bordered" required />
+                                <input type="name" name="name" placeholder="Name" className="input input-bordered"  />
                             </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Address</span>
-                                </label>
-                                <input type="text" name="address" placeholder="Address" className="input input-bordered" required />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Phone</span>
-                                </label>
-                                <input type="number" name="phone" placeholder="Phone" className="input input-bordered" required />
-                            </div>
+                            
+                            
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Photo Url</span>
                                 </label>
-                                <input type="text" name="photo" placeholder="Photo Url" className="input input-bordered" required />
+                                <input type="text" name="photo" placeholder="Photo Url" className="input input-bordered"  />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                                <input type="email" name="email" placeholder="email" className="input input-bordered"  />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type={isOpen?"text":"password"} name="password" placeholder="password" className="input input-bordered" required /><span onClick={handleEye} className='relative bottom-6 left-52'>{isOpen?<FaEye />: <FaEyeSlash />}</span>
+                                <input type={isOpen?"text":"password"} name="password" placeholder="password" className="input input-bordered"  /><span onClick={handleEye} className='relative bottom-6 left-52'>{isOpen?<FaEye />: <FaEyeSlash />}</span>
                                 {isLess?<p>Password must be more than 6 letter</p>:""}
                                 {isLower?<p>Use At leat one small letter</p>:""}
                                 {isUpper?<p>Use At least One Capital letter</p>:""}

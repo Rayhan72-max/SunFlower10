@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <App></App>,
     children: [{
-      path: "/",
+      path: "/home",
       element: <Home></Home>,
       loader:()=> fetch("./campaigns.json")
     },
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/addcampaign",
-    element: <AddCampaign></AddCampaign>
+    element: <Private><AddCampaign></AddCampaign></Private>
   },
   {
     path:"/details/:id",

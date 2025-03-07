@@ -7,8 +7,7 @@ const Navbar = (props) => {
     const { user, logOut, setTheme, theme } = useContext(AuthContext);
     const email = user.email;
     const routes = [
-        { name: "Home", path: "/" },
-
+        { name: "Home", path: "/home" },
         { name: "My Campaign", path: `/mycampaign/${email}` },
         { name: "My Donation", path: `/mydonation/${email}` },
         { name: "Add Campaign", path: "/addcampaign" },
@@ -41,7 +40,7 @@ const Navbar = (props) => {
 
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">SunFlower</a>
+                    <a className="btn btn-ghost text-xl">CrowdCube</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -49,7 +48,7 @@ const Navbar = (props) => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {user === "" ? <Link to={"/login"}><button className="btn font-semibold">Log In</button></Link> : <div className='flex flex-row items-center gap-2 '> <img className='rounded' src={user.photoURL}></img> <button className="btn font-semibold" onClick={handleLogOut}>LogOut</button></div>}
+                    {user === "" ? <Link to={"/login"}><button className="btn font-semibold">Log In</button></Link> : <div data-tooltip-id="my-tooltip-inline" data-tooltip-content={user.displayName} className='flex flex-row items-center gap-2'> <img className='rounded-full w-[50px] h-[50px]' src={user.photoURL}></img> <button className="btn font-semibold" onClick={handleLogOut}>LogOut</button></div>}
                     <input data-tooltip-id="my-tooltip-inline"
                         data-tooltip-content="Change Theme" onClick={handleTheme} type="checkbox" defaultChecked className="ml-2 toggle border-indigo-600 bg-white checked:bg-black checked:text-white checked:border-orange-500 " />
                     <Tooltip
