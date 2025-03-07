@@ -1,4 +1,4 @@
-# CrowdCUbe
+# CrowdCUbe: A CrowdFunding Application
 
 ## Key Features
 
@@ -8,3 +8,4 @@
 4. Update the information of donation.
 5. Sort campaigns by price.
 6. Diasbled Campagins which are expired.
+7. Updated Campaigns and Donation are saved individually.
