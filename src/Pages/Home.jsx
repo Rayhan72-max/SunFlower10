@@ -89,7 +89,7 @@ const Home = (props) => {
                 <section>
                     <h1 className="text-5xl font-bold bg-gradient-to-br from-blue-600 to-cyan-500 text-transparent bg-clip-text text-center p-2">Gellary</h1>
                 <div className='flex flex-col  lg:grid grid-cols-3 gap-4'>
-                        <img src={img1} id="img"/>
+                        <img src={img1}/>
                         <img src={img1}/>
                         <img src={img1}/>
                         <img src={img1}/>

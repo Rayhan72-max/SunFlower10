@@ -1,12 +1,10 @@
-# React + Vite
+# CrowdCUbe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Key Features
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Confidential pages are made protected by private route
+2. Firebase login and Register system applied
+3. Can update and delete campagins.
+4. Update the information of donation.
+5. Sort campaigns by price.
+6. Diasbled Campagins which are expired.

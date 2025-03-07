@@ -14,6 +14,7 @@ const AllCampaigns = (props) => {
     setCampaigns(shortedItems)
 
   }
+  
  
   
 
