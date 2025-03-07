@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Banner from '../Component/Banner';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
-import img1 from "../assets/Cow.jpg"
+
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import About from '../Component/About';
 /* import img2 from ""
@@ -16,7 +16,7 @@ const Home = (props) => {
         if(isWide===false){setIsWide(true);}
     }
     
-    console.log(campaigns)
+    
     const today = new Date();
     const runnigCampaigns = campaigns.filter(campaign => {
         const deadline = new Date(campaign.deadline)

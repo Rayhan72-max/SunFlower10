@@ -7,7 +7,7 @@ const Navbar = (props) => {
     const { user, logOut, setTheme, theme } = useContext(AuthContext);
     const email = user.email;
     const routes = [
-        { name: "Home", path: "/home" },
+        { name: "Home", path: "/" },
         { name: "My Campaign", path: `/mycampaign/${email}` },
         { name: "My Donation", path: `/mydonation/${email}` },
         { name: "Add Campaign", path: "/addcampaign" },

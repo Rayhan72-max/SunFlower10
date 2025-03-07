@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../assets/SunFlower.jpg"
+import logo from "../assets/logo.jpg"
 const About = (props) => {
     return (
         <div>
